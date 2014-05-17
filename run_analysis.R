@@ -1,9 +1,41 @@
-# 
+# This R script creates a tidy data set from the University of California,
+# Irvine (UCI) Human Activity Recognition (HAR) Using Smartphones data set
 #
-# Style guide reference:
-# ----------------------
+# Data citation:
+# -------------
+# [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and 
+#     Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones 
+#     using a Multiclass Hardware-Friendly Support Vector Machine. 
+#     International Workshop of Ambient Assisted Living (IWAAL 2012). 
+#     Vitoria-Gasteiz, Spain. Dec 2012
+#     http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+#
+# R programming style guide reference:
+# -----------------------------------
 # https://google-styleguide.googlecode.com/svn/trunk/Rguide.xml
-require(stringr)
+
+#-----------------------------------------------------------------------------
+# Verify required packages are installed
+#-----------------------------------------------------------------------------
+# Techincal reference:
+# http://stackoverflow.com/questions/9341635/how-can-i-check-for-installed-r-packages-before-running-install-packages
+required.packages <- c("stringr",
+                       "plyr",
+                       "RColorBrewer",
+                       "ggplot2")
+
+new.packages <- required.packages[!(required.packages %in% 
+                                    installed.packages()[,"Package"])]
+
+if(length(new.packages)) {
+  install.packages(new.packages)
+} 
+
+library(stringr)
+library(plyr)
+library(ggplot2)
+library(RColorBrewer)
+library(extrafont)
 
 # Reset R environment
 # http://stackoverflow.com/questions/14187048/r-language-clean-variables-and-close-connections
@@ -285,6 +317,19 @@ loadActivityData <- function(topLevelDataPath,
   return(activityData)
 }
 
+loadSubjectData <- function(topLevelDataPath,
+                            dataSetType) {
+  conSubjectData <- file(file.path(topLevelDataPath,
+                                   dataSetType,
+                                   paste("subject_",
+                                         dataSetType,
+                                         ".txt",sep="")),"rb")
+  
+  subject <- as.factor(as.integer(readLines(conSubjectData)))
+  
+  close(conSubjectData)  
+}
+
 loadDataSet <- function(topLevelDataPath,
                         dataSetType,
                         features,
@@ -340,6 +385,54 @@ loadDataSet <- function(topLevelDataPath,
   return(dataSet)
 }
 
+loadCombinedDataSet <- function(topLevelDataPath) {
+  # Reads the combined training & test data sets into memory. This
+  # function also subsets the mean and standard deviation for each
+  # measurement
+  #
+  # Args:
+  #   topLevelDataPath: String that defines the path to the UCI Human
+  #                     Activity Recognition (HAR) Smartphones Data Set
+  #
+  # Returns:
+  #   dataSet: Data frame that contains mean and standard deviation for
+  #            UCI Human Activity Recognition (HAR) Smartphones training &
+  #            testing data measurements
+  features <- readFeatures(topLevelDataPath)
+  
+  activityLabels <- readActivityLabels(topLevelDataPath)
+  
+  combinedDataSet <- loadDataSet(topLevelDataPath,
+                                 "train",
+                                 features,
+                                 activityLabels)
+  
+  combinedDataSet <- rbind(combinedDataSet, 
+                           loadDataSet(topLevelDataPath,
+                                       "test",
+                                       features,
+                                       activityLabels))
+  
+  variables <- c(features[sort(c(grep("[.]*Mean[.]*",features),
+                                 grep("[.]*Std[.]*",features)))],
+                 "subject","activity")
+  
+  # Technical reference:
+  # -------------------
+  # http://www.ats.ucla.edu/stat/r/faq/subset_R.htm
+  combinedDataSet <- subset(combinedDataSet,
+                            select=variables)
+  
+  # Technical reference:
+  # -------------------
+  # http://www.cookbook-r.com/Manipulating_data/Changing_the_order_of_levels_of_a_factor/
+  combinedDataSet$subject <- 
+    factor(combinedDataSet$subject,
+           levels=factor(seq(1,30)))
+  
+  return(combinedDataSet)
+}
+
 # Download and uncompress the UCI HAR Database
 if (!file.exists("getdata-projectfiles-UCI HAR Dataset")) {
   # Downloading a *.zip file requires binary file (similar to downloading
@@ -359,17 +452,27 @@ topLevelDataPath <- file.path(".",
                               "getdata-projectfiles-UCI HAR Dataset",
                               "UCI HAR Dataset")
 
-features <- readFeatures(topLevelDataPath)
+combinedDataSet <- loadCombinedDataSet(topLevelDataPath)
 
-activityLabels <- readActivityLabels(topLevelDataPath)
+# Technical reference
+# -------------------
+# http://stackoverflow.com/questions/11370323/learning-to-understand-plyr-ddply
+tidyData <- aggregate(. ~ subject + activity,
+                      data=combinedDataSet,
+                      FUN=mean)
 
-dataSet <- loadDataSet(topLevelDataPath,
-                       "train",
-                       features,
-                       activityLabels)
+tidyData <- arrange(tidyData, subject)
 
-dataSet <- rbind(dataSet, 
-                 loadDataSet(topLevelDataPath,
-                             "test",
-                             features,
-                             activityLabels))
+# Techincal references:
+# -------------------
+# http://stackoverflow.com/questions/14733732/cant-change-fonts-in-ggplot-geom-text
+windowsFonts(Times=windowsFont("TT Times New Roman"))
+
+ggplot(tidyData, aes(x=subject,y=tBodyAccXMean,colour=activity)) + 
+       geom_point(size=5) + facet_grid(. ~ activity) + 
+       facet_wrap(~ activity,nrow=3) + 
+       scale_x_discrete(breaks=c(seq(1,30,5))) +
+       scale_color_brewer(type="qual", palette="Dark2") +
+       theme_gray(base_size=16, base_family="Times") +
+       labs(x="Subject #", y="X-axis Body Acceleration")
+ggsave("tBodyAccXMean.png")
