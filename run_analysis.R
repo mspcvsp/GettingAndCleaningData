@@ -311,7 +311,8 @@ loadDataSet <- function(topLevelDataPath,
   dataPath <- file.path(topLevelDataPath,
                         dataSetType)
   
-  dataSet <- read.table(file.path(trainingDataPath,
+  dataSet <- read.table(file.path(topLevelDataPath,
+                                  dataSetType,
                                   paste("X_",
                                         dataSetType,
                                         ".txt",sep="")))
@@ -362,7 +363,13 @@ features <- readFeatures(topLevelDataPath)
 
 activityLabels <- readActivityLabels(topLevelDataPath)
 
-trainData <- loadDataSet(topLevelDataPath,
-                         "train",
-                         features,
-                         activityLabels)
+dataSet <- loadDataSet(topLevelDataPath,
+                       "train",
+                       features,
+                       activityLabels)
+
+dataSet <- rbind(dataSet, 
+                 loadDataSet(topLevelDataPath,
+                             "test",
+                             features,
+                             activityLabels))
