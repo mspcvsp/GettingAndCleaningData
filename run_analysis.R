@@ -34,7 +34,7 @@ capitalizeVariableName <- function(inVariableName) {
 }
 
 reformatVariableNames <- function(inFeatures) {
-  # Reformats the HCI HAR Smartphones data set variable names using 
+  # Reformats the UCI HAR Smartphones data set variable names using 
   # the following transformation rules:
   #
   # - "tBodyAcc-mean()-X" to "tBodyAccXMean"
@@ -215,11 +215,128 @@ readFeatures <- function(topLevelDataPath) {
   # Remove feature number from feature name
   features <- gsub("[0-9]+\\s+","",features)
   
-  # Reformat HCI HAR variable names so that they can be assigned
+  # Reformat UCI HAR variable names so that they can be assigned
   # as the name of an R data frame's column
   features <- reformatVariableNames(features)
   
   return(features)
+}
+
+readActivityLabels <- function(topLevelDataPath) {
+  # Reads the UCI HAR Smartphones Data set activity labels into memory
+  #
+  # Args:
+  #   topLevelDataPath: String that defines the path to the UCI Human
+  #                     Activity Recognition (HAR) Smartphones Data Set
+  #
+  # Returns:
+  #   activityLabels: 1 by 6 character vector that stores the UCI HAR 
+  #                   Smartphones data set activity labels
+  conActivityLabels <- file(file.path(topLevelDataPath,
+                                      "activity_labels.txt"),"r")
+  
+  activityLabels <- readLines(conActivityLabels)
+  
+  close(conActivityLabels)
+  
+  # Remove activity number from activity label
+  activityLabels <- gsub("[0-9]+\\s+","",activityLabels)
+  
+  return(activityLabels)
+}
+
+loadActivityData <- function(topLevelDataPath,
+                             dataSetType,
+                             activityLabels) {
+  # Reads the activity number for each record and converts it to an
+  # activity label
+  #
+  #
+  # Args:
+  #   topLevelDataPath: String that defines the path to the UCI Human
+  #                     Activity Recognition (HAR) Smartphones Data Set
+  #
+  #   dataSetType: String that defines the data set type (i.e. "train" or 
+  #                "test)
+  #
+  #   activityLabels: 1 by 6 character vector that stores the UCI HAR 
+  #                   Smartphones data set activity labels
+  #
+  # Returns:
+  #   activityData: 1 by N factor vector that stores the UCI HAR 
+  #                 Smartphones data set activity data type
+  conActivityData <- file(file.path(topLevelDataPath,
+                                    dataSetType,
+                                    paste("y_",
+                                          dataSetType,
+                                          ".txt",sep="")),"rb")
+  
+  activityDataNumber <- as.integer(readLines(conActivityData))
+  
+  close(conActivityData)
+  
+  activityData <- vector("character", length(activityDataNumber))
+  for (n in seq(1,length(activityDataNumber))) {
+    activityData[n] = activityLabels[activityDataNumber[n]]
+  }
+  
+  activityData <- as.factor(activityData)
+  
+  return(activityData)
+}
+
+loadDataSet <- function(topLevelDataPath,
+                        dataSetType,
+                        features,
+                        activityLabels) {
+  # Reads a UCI Human Activity Recognition (HAR) Smartphones Data Set
+  # into memory
+  #
+  # Args:
+  #   topLevelDataPath: String that defines the path to the UCI Human
+  #                     Activity Recognition (HAR) Smartphones Data Set
+  #
+  #   dataSetType: String that defines the data set type (i.e. "train" or 
+  #                "test)
+  #
+  #   features: 1 by 561 character vector that stores the UCI HAR 
+  #             Smartphones data set features
+  #
+  #   activityLabels: 1 by 6 character vector that stores the UCI HAR 
+  #                   Smartphones data set activity labels
+  #
+  # Returns:
+  #   dataSet: Data frame that contains a UCI Human Activity Recognition 
+  #            (HAR) Smartphones Data Set
+  dataPath <- file.path(topLevelDataPath,
+                        dataSetType)
+  
+  dataSet <- read.table(file.path(trainingDataPath,
+                                  paste("X_",
+                                        dataSetType,
+                                        ".txt",sep="")))
+  
+  colnames(dataSet) <- features
+  
+  conSubjectData <- file(file.path(topLevelDataPath,
+                                   dataSetType,
+                                   paste("subject_",
+                                         dataSetType,
+                                         ".txt",sep="")),"rb")
+  
+  dataSet$subject <- readLines(conSubjectData)
+  
+  close(conSubjectData)
+  
+  dataSet$subject <- as.factor(dataSet$subject)
+  
+  dataSet$activity <- loadActivityData(topLevelDataPath,
+                                       dataSetType,
+                                       activityLabels)
+  
+  dataSet$type <- rep(dataSetType, nrow(dataSet))
+  
+  return(dataSet)
 }
 
 # Download and uncompress the UCI HAR Database
@@ -243,8 +360,9 @@ topLevelDataPath <- file.path(".",
 
 features <- readFeatures(topLevelDataPath)
 
-trainingDataPath <- file.path(topLevelDataPath,
-                              "train")
+activityLabels <- readActivityLabels(topLevelDataPath)
 
-trainingData <- read.table(file.path(trainingDataPath,
-                                     "X_train.txt"))
+trainData <- loadDataSet(topLevelDataPath,
+                         "train",
+                         features,
+                         activityLabels)
