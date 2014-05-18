@@ -5,4 +5,4 @@ This repository illustrates the process of creating a tidy data set for the ["Hu
   
 | R script name      | Description |  
 | ------------------ | ----------- |  
-| `run_analysis.R`   |             |
+| `run_analysis.R`   | Creates a tidy data set from UCI HAR Smartphone data set mean and standard deviation variables |  
