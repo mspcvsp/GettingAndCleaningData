@@ -98,3 +98,7 @@ The citation for this data set is:
   <TR> <TD align="right"> 85 </TD> <TD> angle.Y.gravityMean </TD> <TD> Time </TD> <TD> angle(Y-axis, mean gravity) </TD> </TR>
   <TR> <TD align="right"> 86 </TD> <TD> angle.Z.gravityMean </TD> <TD> Time </TD> <TD> angle(Z-axis, mean gravity) </TD> </TR>
    </TABLE>
+
+## Data Transformations  
+  
+The top-level flow of the R script (i.e. run_analysis.R) that I wrote to create a tidy data set that contains the mean and standard deviation of the UCA HAR Smartphone data set is composed of the following nine steps:  
