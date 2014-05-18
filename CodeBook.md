@@ -1,11 +1,14 @@
 # Codebook #
 
-The objective of this document is to process that I followed in order to create a tidy data set from the University of California, Irvine Human Activity Recognition Using Smartphones data set mean and standard deviation measurements.
+The objective of this document is to describe the process that I followed in order to create a tidy data set from the University of California, Irvine Human Activity Recognition Using Smartphones data set mean and standard deviation measurements.
 
 The citation for this data set is:  
-[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012. ["Human Activity Recognition Using Smartphones Data Set"](http://http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012. ["Human Activity Recognition Using Smartphones Data Set"](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 
-## Variables
+## Variables [1]
+
+<!-- html table generated in R 3.1.0 by xtable 1.7-3 package -->
+<!-- Sat May 17 23:39:06 2014 -->
 <TABLE border=1>
 <TR> <TH> # </TH> <TH> Variable </TH> <TH> Domain </TH> <TH> Description </TH>  </TR>
   <TR> <TD align="right"> 1 </TD> <TD> tBodyAccXMean </TD> <TD> Time </TD> <TD> Body x-axis mean acceleration </TD> </TR>
@@ -48,51 +51,52 @@ The citation for this data set is:
   <TR> <TD align="right"> 38 </TD> <TD> tBodyGyroMagStd </TD> <TD> Time </TD> <TD> Body gyroscope magnitude standard deviation </TD> </TR>
   <TR> <TD align="right"> 39 </TD> <TD> tBodyGyroJerkMagMean </TD> <TD> Time </TD> <TD> Body mean gyroscope derivative magnitude </TD> </TR>
   <TR> <TD align="right"> 40 </TD> <TD> tBodyGyroJerkMagStd </TD> <TD> Time </TD> <TD> Body gyroscope derivative magnitude standard deviation </TD> </TR>
-  <TR> <TD align="right"> 41 </TD> <TD> fBodyAccXMean </TD> <TD> Frequency </TD> <TD> fBodyAccXMean </TD> </TR>
-  <TR> <TD align="right"> 42 </TD> <TD> fBodyAccYMean </TD> <TD> Frequency </TD> <TD> fBodyAccYMean </TD> </TR>
-  <TR> <TD align="right"> 43 </TD> <TD> fBodyAccZMean </TD> <TD> Frequency </TD> <TD> fBodyAccZMean </TD> </TR>
-  <TR> <TD align="right"> 44 </TD> <TD> fBodyAccXStd </TD> <TD> Frequency </TD> <TD> fBodyAccXStd </TD> </TR>
-  <TR> <TD align="right"> 45 </TD> <TD> fBodyAccYStd </TD> <TD> Frequency </TD> <TD> fBodyAccYStd </TD> </TR>
-  <TR> <TD align="right"> 46 </TD> <TD> fBodyAccZStd </TD> <TD> Frequency </TD> <TD> fBodyAccZStd </TD> </TR>
-  <TR> <TD align="right"> 47 </TD> <TD> fBodyAccXMeanFreq </TD> <TD> Frequency </TD> <TD> fBodyAccXMeanFreq </TD> </TR>
-  <TR> <TD align="right"> 48 </TD> <TD> fBodyAccYMeanFreq </TD> <TD> Frequency </TD> <TD> fBodyAccYMeanFreq </TD> </TR>
-  <TR> <TD align="right"> 49 </TD> <TD> fBodyAccZMeanFreq </TD> <TD> Frequency </TD> <TD> fBodyAccZMeanFreq </TD> </TR>
-  <TR> <TD align="right"> 50 </TD> <TD> fBodyAccJerkXMean </TD> <TD> Frequency </TD> <TD> fBodyAccJerkXMean </TD> </TR>
-  <TR> <TD align="right"> 51 </TD> <TD> fBodyAccJerkYMean </TD> <TD> Frequency </TD> <TD> fBodyAccJerkYMean </TD> </TR>
-  <TR> <TD align="right"> 52 </TD> <TD> fBodyAccJerkZMean </TD> <TD> Frequency </TD> <TD> fBodyAccJerkZMean </TD> </TR>
-  <TR> <TD align="right"> 53 </TD> <TD> fBodyAccJerkXStd </TD> <TD> Frequency </TD> <TD> fBodyAccJerkXStd </TD> </TR>
-  <TR> <TD align="right"> 54 </TD> <TD> fBodyAccJerkYStd </TD> <TD> Frequency </TD> <TD> fBodyAccJerkYStd </TD> </TR>
-  <TR> <TD align="right"> 55 </TD> <TD> fBodyAccJerkZStd </TD> <TD> Frequency </TD> <TD> fBodyAccJerkZStd </TD> </TR>
-  <TR> <TD align="right"> 56 </TD> <TD> fBodyAccJerkXMeanFreq </TD> <TD> Frequency </TD> <TD> fBodyAccJerkXMeanFreq </TD> </TR>
-  <TR> <TD align="right"> 57 </TD> <TD> fBodyAccJerkYMeanFreq </TD> <TD> Frequency </TD> <TD> fBodyAccJerkYMeanFreq </TD> </TR>
-  <TR> <TD align="right"> 58 </TD> <TD> fBodyAccJerkZMeanFreq </TD> <TD> Frequency </TD> <TD> fBodyAccJerkZMeanFreq </TD> </TR>
-  <TR> <TD align="right"> 59 </TD> <TD> fBodyGyroXMean </TD> <TD> Frequency </TD> <TD> fBodyGyroXMean </TD> </TR>
-  <TR> <TD align="right"> 60 </TD> <TD> fBodyGyroYMean </TD> <TD> Frequency </TD> <TD> fBodyGyroYMean </TD> </TR>
-  <TR> <TD align="right"> 61 </TD> <TD> fBodyGyroZMean </TD> <TD> Frequency </TD> <TD> fBodyGyroZMean </TD> </TR>
-  <TR> <TD align="right"> 62 </TD> <TD> fBodyGyroXStd </TD> <TD> Frequency </TD> <TD> fBodyGyroXStd </TD> </TR>
-  <TR> <TD align="right"> 63 </TD> <TD> fBodyGyroYStd </TD> <TD> Frequency </TD> <TD> fBodyGyroYStd </TD> </TR>
-  <TR> <TD align="right"> 64 </TD> <TD> fBodyGyroZStd </TD> <TD> Frequency </TD> <TD> fBodyGyroZStd </TD> </TR>
-  <TR> <TD align="right"> 65 </TD> <TD> fBodyGyroXMeanFreq </TD> <TD> Frequency </TD> <TD> fBodyGyroXMeanFreq </TD> </TR>
-  <TR> <TD align="right"> 66 </TD> <TD> fBodyGyroYMeanFreq </TD> <TD> Frequency </TD> <TD> fBodyGyroYMeanFreq </TD> </TR>
-  <TR> <TD align="right"> 67 </TD> <TD> fBodyGyroZMeanFreq </TD> <TD> Frequency </TD> <TD> fBodyGyroZMeanFreq </TD> </TR>
-  <TR> <TD align="right"> 68 </TD> <TD> fBodyAccMagMean </TD> <TD> Frequency </TD> <TD> fBodyAccMagMean </TD> </TR>
-  <TR> <TD align="right"> 69 </TD> <TD> fBodyAccMagStd </TD> <TD> Frequency </TD> <TD> fBodyAccMagStd </TD> </TR>
-  <TR> <TD align="right"> 70 </TD> <TD> fBodyAccMagMeanFreq </TD> <TD> Frequency </TD> <TD> fBodyAccMagMeanFreq </TD> </TR>
-  <TR> <TD align="right"> 71 </TD> <TD> fBodyBodyAccJerkMagMean </TD> <TD> Frequency </TD> <TD> fBodyBodyAccJerkMagMean </TD> </TR>
-  <TR> <TD align="right"> 72 </TD> <TD> fBodyBodyAccJerkMagStd </TD> <TD> Frequency </TD> <TD> fBodyBodyAccJerkMagStd </TD> </TR>
-  <TR> <TD align="right"> 73 </TD> <TD> fBodyBodyAccJerkMagMeanFreq </TD> <TD> Frequency </TD> <TD> fBodyBodyAccJerkMagMeanFreq </TD> </TR>
-  <TR> <TD align="right"> 74 </TD> <TD> fBodyBodyGyroMagMean </TD> <TD> Frequency </TD> <TD> fBodyBodyGyroMagMean </TD> </TR>
-  <TR> <TD align="right"> 75 </TD> <TD> fBodyBodyGyroMagStd </TD> <TD> Frequency </TD> <TD> fBodyBodyGyroMagStd </TD> </TR>
-  <TR> <TD align="right"> 76 </TD> <TD> fBodyBodyGyroMagMeanFreq </TD> <TD> Frequency </TD> <TD> fBodyBodyGyroMagMeanFreq </TD> </TR>
-  <TR> <TD align="right"> 77 </TD> <TD> fBodyBodyGyroJerkMagMean </TD> <TD> Frequency </TD> <TD> fBodyBodyGyroJerkMagMean </TD> </TR>
-  <TR> <TD align="right"> 78 </TD> <TD> fBodyBodyGyroJerkMagStd </TD> <TD> Frequency </TD> <TD> fBodyBodyGyroJerkMagStd </TD> </TR>
-  <TR> <TD align="right"> 79 </TD> <TD> fBodyBodyGyroJerkMagMeanFreq </TD> <TD> Frequency </TD> <TD> fBodyBodyGyroJerkMagMeanFreq </TD> </TR>
-  <TR> <TD align="right"> 80 </TD> <TD> angle.tBodyAccMean.gravity </TD> <TD> Time </TD> <TD> angle.tBodyAccMean.gravity </TD> </TR>
-  <TR> <TD align="right"> 81 </TD> <TD> angle.tBodyAccJerkMean.gravityMean </TD> <TD> Time </TD> <TD> angle.tBodyAccJerkMean.gravityMean </TD> </TR>
-  <TR> <TD align="right"> 82 </TD> <TD> angle.tBodyGyroMean.gravityMean </TD> <TD> Time </TD> <TD> angle.tBodyGyroMean.gravityMean </TD> </TR>
-  <TR> <TD align="right"> 83 </TD> <TD> angle.tBodyGyroJerkMean.gravityMean </TD> <TD> Time </TD> <TD> angle.tBodyGyroJerkMean.gravityMean </TD> </TR>
-  <TR> <TD align="right"> 84 </TD> <TD> angle.X.gravityMean </TD> <TD> Time </TD> <TD> angle.X.gravityMean </TD> </TR>
-  <TR> <TD align="right"> 85 </TD> <TD> angle.Y.gravityMean </TD> <TD> Time </TD> <TD> angle.Y.gravityMean </TD> </TR>
-  <TR> <TD align="right"> 86 </TD> <TD> angle.Z.gravityMean </TD> <TD> Time </TD> <TD> angle.Z.gravityMean </TD> </TR>
+  <TR> <TD align="right"> 41 </TD> <TD> fBodyAccXMean </TD> <TD> Frequency </TD> <TD> Mean FFT(Body x-axis acceleration) magnitude </TD> </TR>
+  <TR> <TD align="right"> 42 </TD> <TD> fBodyAccYMean </TD> <TD> Frequency </TD> <TD> Mean FFT(Body y-axis acceleration) magnitude </TD> </TR>
+  <TR> <TD align="right"> 43 </TD> <TD> fBodyAccZMean </TD> <TD> Frequency </TD> <TD> Mean FFT(Body z-axis acceleration) magnitude </TD> </TR>
+  <TR> <TD align="right"> 44 </TD> <TD> fBodyAccXStd </TD> <TD> Frequency </TD> <TD> FFT(Body x-axis acceleration) magnitude standard deviation </TD> </TR>
+  <TR> <TD align="right"> 45 </TD> <TD> fBodyAccYStd </TD> <TD> Frequency </TD> <TD> FFT(Body y-axis acceleration) magnitude standard deviation </TD> </TR>
+  <TR> <TD align="right"> 46 </TD> <TD> fBodyAccZStd </TD> <TD> Frequency </TD> <TD> FFT(Body z-axis acceleration) magnitude standard deviation </TD> </TR>
+  <TR> <TD align="right"> 47 </TD> <TD> fBodyAccXMeanFreq </TD> <TD> Frequency </TD> <TD> Body mean x-axis acceleration frequency </TD> </TR>
+  <TR> <TD align="right"> 48 </TD> <TD> fBodyAccYMeanFreq </TD> <TD> Frequency </TD> <TD> Body mean y-axis acceleration frequency </TD> </TR>
+  <TR> <TD align="right"> 49 </TD> <TD> fBodyAccZMeanFreq </TD> <TD> Frequency </TD> <TD> Body mean z-axis acceleration frequency </TD> </TR>
+  <TR> <TD align="right"> 50 </TD> <TD> fBodyAccJerkXMean </TD> <TD> Frequency </TD> <TD> Mean FFT(Body x-axis acceleration derivative) magnitude </TD> </TR>
+  <TR> <TD align="right"> 51 </TD> <TD> fBodyAccJerkYMean </TD> <TD> Frequency </TD> <TD> Mean FFT(Body y-axis acceleration derivative) magnitude </TD> </TR>
+  <TR> <TD align="right"> 52 </TD> <TD> fBodyAccJerkZMean </TD> <TD> Frequency </TD> <TD> Mean FFT(Body z-axis acceleration derivative) magnitude </TD> </TR>
+  <TR> <TD align="right"> 53 </TD> <TD> fBodyAccJerkXStd </TD> <TD> Frequency </TD> <TD> FFT(Body x-axis acceleration derivative) magnitude standard deviation </TD> </TR>
+  <TR> <TD align="right"> 54 </TD> <TD> fBodyAccJerkYStd </TD> <TD> Frequency </TD> <TD> FFT(Body y-axis acceleration derivative) magnitude standard deviation </TD> </TR>
+  <TR> <TD align="right"> 55 </TD> <TD> fBodyAccJerkZStd </TD> <TD> Frequency </TD> <TD> FFT(Body z-axis acceleration derivative) magnitude standard deviation </TD> </TR>
+  <TR> <TD align="right"> 56 </TD> <TD> fBodyAccJerkXMeanFreq </TD> <TD> Frequency </TD> <TD> Body mean x-axis acceleration derivative frequency </TD> </TR>
+  <TR> <TD align="right"> 57 </TD> <TD> fBodyAccJerkYMeanFreq </TD> <TD> Frequency </TD> <TD> Body mean y-axis acceleration derivative frequency </TD> </TR>
+  <TR> <TD align="right"> 58 </TD> <TD> fBodyAccJerkZMeanFreq </TD> <TD> Frequency </TD> <TD> Body mean z-axis acceleration derivative frequency </TD> </TR>
+  <TR> <TD align="right"> 59 </TD> <TD> fBodyGyroXMean </TD> <TD> Frequency </TD> <TD> Mean FFT(Body x-axis gyroscope) magnitude </TD> </TR>
+  <TR> <TD align="right"> 60 </TD> <TD> fBodyGyroYMean </TD> <TD> Frequency </TD> <TD> Mean FFT(Body y-axis gyroscope) magnitude </TD> </TR>
+  <TR> <TD align="right"> 61 </TD> <TD> fBodyGyroZMean </TD> <TD> Frequency </TD> <TD> Mean FFT(Body z-axis gyroscope) magnitude </TD> </TR>
+  <TR> <TD align="right"> 62 </TD> <TD> fBodyGyroXStd </TD> <TD> Frequency </TD> <TD> FFT(Body x-axis gyroscope) magnitude standard deviation </TD> </TR>
+  <TR> <TD align="right"> 63 </TD> <TD> fBodyGyroYStd </TD> <TD> Frequency </TD> <TD> FFT(Body y-axis gyroscope) magnitude standard deviation </TD> </TR>
+  <TR> <TD align="right"> 64 </TD> <TD> fBodyGyroZStd </TD> <TD> Frequency </TD> <TD> FFT(Body z-axis gyroscope) magnitude standard deviation </TD> </TR>
+  <TR> <TD align="right"> 65 </TD> <TD> fBodyGyroXMeanFreq </TD> <TD> Frequency </TD> <TD> Body x-axis gyroscope mean frequency </TD> </TR>
+  <TR> <TD align="right"> 66 </TD> <TD> fBodyGyroYMeanFreq </TD> <TD> Frequency </TD> <TD> Body y-axis gyroscope mean frequency </TD> </TR>
+  <TR> <TD align="right"> 67 </TD> <TD> fBodyGyroZMeanFreq </TD> <TD> Frequency </TD> <TD> Body z-axis gyroscope mean frequency </TD> </TR>
+  <TR> <TD align="right"> 68 </TD> <TD> fBodyAccMagMean </TD> <TD> Frequency </TD> <TD> Mean FFT(Body acceleration) magnitude </TD> </TR>
+  <TR> <TD align="right"> 69 </TD> <TD> fBodyAccMagStd </TD> <TD> Frequency </TD> <TD> FFT(Body acceleration) magnitude standard deviation </TD> </TR>
+  <TR> <TD align="right"> 70 </TD> <TD> fBodyAccMagMeanFreq </TD> <TD> Frequency </TD> <TD> Body acceleration magnitude mean frequency </TD> </TR>
+  <TR> <TD align="right"> 71 </TD> <TD> fBodyBodyAccJerkMagMean </TD> <TD> Frequency </TD> <TD> Mean FFT(Body acceleration derivative) magnitude </TD> </TR>
+  <TR> <TD align="right"> 72 </TD> <TD> fBodyBodyAccJerkMagStd </TD> <TD> Frequency </TD> <TD> FFT(Body acceleration derivative) standard deviation </TD> </TR>
+  <TR> <TD align="right"> 73 </TD> <TD> fBodyBodyAccJerkMagMeanFreq </TD> <TD> Frequency </TD> <TD> Body acceleration derivative mean frequency </TD> </TR>
+  <TR> <TD align="right"> 74 </TD> <TD> fBodyBodyGyroMagMean </TD> <TD> Frequency </TD> <TD> Mean FFT(Body gyroscope) magnitude </TD> </TR>
+  <TR> <TD align="right"> 75 </TD> <TD> fBodyBodyGyroMagStd </TD> <TD> Frequency </TD> <TD> FFT(Body gyroscope) magnitude standard deviation </TD> </TR>
+  <TR> <TD align="right"> 76 </TD> <TD> fBodyBodyGyroMagMeanFreq </TD> <TD> Frequency </TD> <TD> Body gyroscope magnitude mean frequency </TD> </TR>
+  <TR> <TD align="right"> 77 </TD> <TD> fBodyBodyGyroJerkMagMean </TD> <TD> Frequency </TD> <TD> Mean FFT(Body gyroscope derivative) magnitude </TD> </TR>
+  <TR> <TD align="right"> 78 </TD> <TD> fBodyBodyGyroJerkMagStd </TD> <TD> Frequency </TD> <TD> FFT(Body gyroscope derivative) magnitude standard deviation </TD> </TR>
+  <TR> <TD align="right"> 79 </TD> <TD> fBodyBodyGyroJerkMagMeanFreq </TD> <TD> Frequency </TD> <TD> Body gyroscope derivative magnitude mean frequency </TD> </TR>
+  <TR> <TD align="right"> 80 </TD> <TD> angle.tBodyAccMean.gravity </TD> <TD> Time </TD> <TD> angle(Body mean acceleration, gravity) </TD> </TR>
+  <TR> <TD align="right"> 81 </TD> <TD> angle.tBodyAccJerkMean.gravityMean </TD> <TD> Time </TD> <TD> angle(Body mean acceleration derivative, mean gravity) </TD> </TR>
+  <TR> <TD align="right"> 82 </TD> <TD> angle.tBodyGyroMean.gravityMean </TD> <TD> Time </TD> <TD> angle(Body mean gyroscope, mean gravity) </TD> </TR>
+  <TR> <TD align="right"> 83 </TD> <TD> angle.tBodyGyroJerkMean.gravityMean </TD> <TD> Time </TD> <TD> angle(Body mean gyroscope derivative, mean gravity) </TD> </TR>
+  <TR> <TD align="right"> 84 </TD> <TD> angle.X.gravityMean </TD> <TD> Time </TD> <TD> angle(X-axis, gravityMean) </TD> </TR>
+  <TR> <TD align="right"> 85 </TD> <TD> angle.Y.gravityMean </TD> <TD> Time </TD> <TD> angle(Y-axis, gravityMean) </TD> </TR>
+  <TR> <TD align="right"> 86 </TD> <TD> angle.Z.gravityMean </TD> <TD> Time </TD> <TD> angle(Z-axis, gravityMean) </TD> </TR>
    </TABLE>
+
 
