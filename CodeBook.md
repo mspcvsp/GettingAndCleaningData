@@ -118,24 +118,4 @@ The top-level flow of the R script (i.e. run_analysis.R) that I wrote to create 
 
 The procedure that I followed to create a combined training & test data set begins with loading a description of the variables (i.e. features) stored in the *features.txt* file located in the "UCI HAR Dataset" folder.  
 
-The first processing step that I apply is removing the feature number from the feature name using the following gsub function call:  
-  
-`features <- gsub("[0-9]+\\s+","",features)`.  
-  
-Next, `runAnalysis.R` loops through the feature names and applies the regular expressions defined in Table #2 to separate substring groups from the "HCI HAR Smartphone" data set variable names. This R script subsequently reformats the feature name shown on the left column of Table #2 into the transformed feature name illustrated on the right column in this table. In addition, the regular expressions included in the center column of Table #2 are based on the following examples:  
-     
-- [Regular expression for matching parentheses](http://stackoverflow.com/questions/5633533/regular-expression-for-matching-parentheses)  
-- [Regex group capture in R](http://stackoverflow.com/questions/952275/regex-group-capture-in-r)  
-  
-<TABLE border=1>
-  <caption><u>Table #2</u>: Reformat Feature Names</caption>
-  <TR> <TH> Feature Name </TH> <TH> Regular Expression </TH> <TH> Transformed Feature Name </TH> </TR>
-  <TR> <TD> tBodyAcc-mean()-X </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]) </TD> <TD> tBodyAccXMean </TD> </TR>
-  <TR> <TD> tBodyAcc-arCoeff()-X,2 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]),([0-9]) </TD> <TD> tBodyAccArCoeffX2 </TD> </TR>
-  <TR> <TD> tBodyAcc-correlation()-X,Y </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]),([A-Z]) </TD> <TD> tBodyAccXYCorrelation </TD> </TR>
-  <TR> <TD> tBodyGyroJerkMag-arCoeff()2 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]([0-9]) </TD> <TD> tBodyGyroJerkMagArCoeff2 </TD> </TR>
-  <TR> <TD> fBodyAcc-bandsEnergy()-25,48 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([0-9]+),([0-9]+) </TD> <TD> fBodyAccBandsEnergy.25.48 </TD> </TR>
-  <TR> <TD> angle(tBodyGyroMean,gravityMean) </TD> <TD> ([a-z]+)[(]([A-Za-z]+)[)]*,([A-Za-z]+)[)] </TD> <TD> angle.tBodyGyroMean.gravityMean </TD> </TR>
-  <TR> <TD> fBodyBodyGyroJerkMag-skewness() </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(]*[)]* </TD> <TD> fBodyBodyGyroJerkMagSkewness </TD> </TR>
-  <TR> <TD> fBodyAccJerk-maxInds-Y </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)-([A-Z]) </TD> <TD> fBodyAccJerkYMaxInds </TD> </TR>
-</TABLE>  
+
