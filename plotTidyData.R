@@ -35,11 +35,11 @@ tidyData <- read.table("./tidyData.txt",
 # http://stackoverflow.com/questions/14733732/cant-change-fonts-in-ggplot-geom-text
 windowsFonts(Times=windowsFont("TT Times New Roman"))
 
-ggplot(tidyData, aes(x=subject,y=tBodyAccXMean,colour=activity)) + 
+ggplot(tidyData, aes(x=subject,y=tBodyAccMagMean,colour=activity)) + 
   geom_point(size=5) + facet_grid(. ~ activity) + 
   facet_wrap(~ activity,nrow=3) + 
   scale_x_discrete(breaks=c(seq(1,30,5))) +
   scale_color_brewer(type="qual", palette="Dark2") +
   theme_gray(base_size=16, base_family="Times") +
-  labs(x="Subject #", y="X-axis Body Acceleration")
-ggsave("tBodyAccXMean.png")
+  labs(x="Subject #", y="Mean Body Acceleration Magnitude")
+ggsave("tBodyAccMagMean.png")
