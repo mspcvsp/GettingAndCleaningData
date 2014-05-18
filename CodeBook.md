@@ -1,11 +1,14 @@
 # Codebook #
 
-The objective of this document is to describe the process that I followed in order to create a tidy data set from the University of California (UCI), Irvine Human Activity Recognition (HAR) Using Smartphones data set mean and standard deviation measurements.
-
-The citation for this data set is:  
-[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012. ["Human Activity Recognition Using Smartphones Data Set"](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
+The objective of this document is to describe the process that I followed in order to create a tidy data set from the ["Human Activity Recognition Using Smartphones Data Set"](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 
 ## Variables [1]
+This data set includes a file (i.e. "features_info.txt") that contains a 
+description of the variables enumerated in Table #1. For example, the authors of the following journal article:
+
+[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012.
+
+mention that "the features selected for this database come from the accelerometer and gyroscope 3-axis raw signals tAcc-XYZ and tGryo-XYZ" [1].
 
 <!-- html table generated in R 3.1.0 by xtable 1.7-3 package -->
 <!-- Sat May 17 23:39:06 2014 -->
@@ -149,10 +152,10 @@ The defining characteristic of a "tidy tool" defined by Hadley Wickham in his pr
 
 Figure #1: Mean Body Acceleration Magnitude
 ![X-axis Body Acceleration](./tBodyAccMagMean.png) 
-
+  
 ## Markdown Syntax References
 The following references were used to generate this Markdown document:  
-1. [Revolution Analytics blog article: Making Publication Ready Tables with xtable"](http://blog.revolutionanalytics.com/2010/02/making-publicationready-tables-with-xtable.html)  
+1. [Revolution Analytics blog article: "Making Publication Ready Tables with xtable"](http://blog.revolutionanalytics.com/2010/02/making-publicationready-tables-with-xtable.html)  
 2. ["print.xtable only displays, doesn't save to disk"](http://stackoverflow.com/questions/6295579/print-xtable-only-displays-doesnt-save-to-disk)  
 3. [Github Markdown Syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#lines)  
 4. [HTML table caption](http://www.w3schools.com/tags/tag_caption.asp)  
