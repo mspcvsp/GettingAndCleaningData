@@ -101,9 +101,9 @@ The citation for this data set is:
 
 ## Data Transformations
 The top-level flow of the R script (i.e. run_analysis.R) that I wrote to create a tidy data set that contains the mean and standard deviation of the UCA HAR Smartphone data set is composed of the following nine steps:  
-1. [Verify that the required R packages are installed](http://stackoverflow.com/questions/9341635/how-can-i-check-for-installed-r-packages-before-running-install-packages)  
-2. [Reset the R environment](http://stackoverflow.com/questions/14187048/r-language-clean-variables-and-close-connections)  
-3.  Initialize the Uniform Resource Locator (i.e. URL) that refers to the compressed UCI HAR dataset.
+1. [Verify that the required R packages are installed](http://stackoverflow.com/questions/9341635/how-can-i-check-for-installed-r-packages-before-running-install-packages)</br>
+2. [Reset the R environment](http://stackoverflow.com/questions/14187048/r-language-clean-variables-and-close-connections)</br>
+3. Initialize the Uniform Resource Locator (i.e. URL) that refers to the compressed UCI HAR dataset.</br>
 4.  Determine whether or not the *getdata-projectfiles-UCI HAR Dataset* folder exists in the directory where run_analysis.R is being run. If this folder doesn't exist, run_analysis.R downloads this zip using [binary mode](http://stackoverflow.com/questions/9655361/download-png-jpg-with-r). Next, it extracts the contents of this zip file using the [unzip](http://www.r-bloggers.com/read-compressed-zip-files-in-r/) function.  
 5. Initialize the path to the top-level of the UCI HAR Dataset  
 6. Loads the combined training & test data set  
