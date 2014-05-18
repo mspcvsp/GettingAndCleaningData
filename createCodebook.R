@@ -5,6 +5,8 @@
 closeAllConnections()
 rm(list=ls())
 
+library(xtable)
+
 Variable <- c("tBodyAccXMean",
               "tBodyAccYMean",
               "tBodyAccZMean",
@@ -272,3 +274,38 @@ Description <- c("Body x-axis mean acceleration",
 # http://stackoverflow.com/questions/6295579/print-xtable-only-displays-doesnt-save-to-disk
 codebook <- xtable(data.frame(Variable,Domain,Description))
 print(codebook,type="html",file="codebook.html")
+
+featureName <- c("tBodyAcc-mean()-X",
+                 "tBodyAcc-arCoeff()-X,2",
+                 "tBodyAcc-correlation()-X,Y",
+                 "tBodyGyroJerkMag-arCoeff()2",
+                 "fBodyAcc-bandsEnergy()-25,48",
+                 "angle(tBodyGyroMean,gravityMean)",
+                 "fBodyBodyGyroJerkMag-skewness()",
+                 "fBodyAccJerk-maxInds-Y")
+
+regularExpressions <- c("([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z])",
+                        "([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]),([0-9])",
+                        "([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]),([A-Z])",
+                        "([A-Za-z]+)-([A-Za-z]+)[(][)]([0-9])",
+                        "([A-Za-z]+)-([A-Za-z]+)[(][)]-([0-9]+),([0-9]+)",
+                        "([a-z]+)[(]([A-Za-z]+)[)]*,([A-Za-z]+)[)]",
+                        "([A-Za-z]+)-([A-Za-z]+)[(]*[)]*",
+                        "([A-Za-z]+)-([A-Za-z]+)-([A-Z])")
+
+transformedFeatureName <- c("tBodyAccXMean",
+                            "tBodyAccArCoeffX2",
+                            "tBodyAccXYCorrelation",
+                            "tBodyGyroJerkMagArCoeff2",
+                            "fBodyAccBandsEnergy.25.48",
+                            "angle.tBodyGyroMean.gravityMean",
+                            "fBodyBodyGyroJerkMagSkewness",
+                            "fBodyAccJerkYMaxInds")
+
+featureNames <- xtable(data.frame(featureName,
+                                  regularExpressions,
+                                  transformedFeatureName))
+print(featureNames,
+      type="html",
+      file="featureNames.html",
+      row.names=FALSE)
