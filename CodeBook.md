@@ -142,5 +142,5 @@ Next, `run_analysis.R` loops loops through the feature names and applies the reg
   <TR> <TD align="center"> 8 </TD> <TD> fBodyAccJerk-maxInds-Y </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)-([A-Z]) </TD> <TD> fBodyAccJerkYMaxInds </TD> </TR>
    </TABLE>
 
-
+Once `run_analysis.R` has reformatted the UCI HAR Smartphone data set variable names, the second processing step that it performs is to load the activity labels. Similar to the feature names, this R script removes the activity number from the activity label. The third processing step performed by `run_analysis.R` is loading the training data into memory using the `read.table` function. Next, it sets the column names of the data frame that stores the training data using the `colnames` function. The fifth processing step performed by `run_analysis.R` is loading the subject data into memory that is stored in the *subject_train.txt* file in the train sub-folder. An important point regarding this processing step is that both the subject and activity are binary format files. Therefore, the "rb" option should be specified when opening a file connection prior to reading them into memory.  
   
