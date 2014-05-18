@@ -122,3 +122,9 @@ The first processing step that I apply is removing the feature number from the f
   
 `features <- gsub("[0-9]+\\s+","",features)`.  
   
+Next, `run_analysis.R` loops loops through the feature names and applies the regular expressions defined in Table #2 to separate substring groups from the "HCI HAR Smartphone" data set variable names. This R script subsequently reformats the feature name shown on the left column of Table #2 into the transformed feature name illustrated on the right column in this table. In addition, the regular expressions included in the center column of Table #2 are based on the following examples:
+    
+- [Regular expression for matching parentheses](http://stackoverflow.com/questions/5633533/regular-expression-for-matching-parentheses)    
+- [Regex group capture in R](http://stackoverflow.com/questions/952275/regex-group-capture-in-r)  
+  
+  
