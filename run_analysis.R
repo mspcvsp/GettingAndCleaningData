@@ -1,3 +1,5 @@
+# run_analysis.R
+#
 # This R script creates a tidy data set from the University of California,
 # Irvine (UCI) Human Activity Recognition (HAR) Using Smartphones data set
 #
@@ -33,9 +35,6 @@ if(length(new.packages)) {
 
 library(stringr)
 library(plyr)
-library(ggplot2)
-library(RColorBrewer)
-library(extrafont)
 
 # Reset R environment
 # http://stackoverflow.com/questions/14187048/r-language-clean-variables-and-close-connections
@@ -465,17 +464,3 @@ tidyData <- arrange(tidyData, subject)
 write.table(tidyData,
             "./tidyData.txt",
             row.names=FALSE)
-
-# Techincal references:
-# -------------------
-# http://stackoverflow.com/questions/14733732/cant-change-fonts-in-ggplot-geom-text
-windowsFonts(Times=windowsFont("TT Times New Roman"))
-
-ggplot(tidyData, aes(x=subject,y=tBodyAccXMean,colour=activity)) + 
-       geom_point(size=5) + facet_grid(. ~ activity) + 
-       facet_wrap(~ activity,nrow=3) + 
-       scale_x_discrete(breaks=c(seq(1,30,5))) +
-       scale_color_brewer(type="qual", palette="Dark2") +
-       theme_gray(base_size=16, base_family="Times") +
-       labs(x="Subject #", y="X-axis Body Acceleration")
-ggsave("tBodyAccXMean.png")
