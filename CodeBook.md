@@ -94,9 +94,9 @@ The citation for this data set is:
   <TR> <TD align="right"> 81 </TD> <TD> angle.tBodyAccJerkMean.gravityMean </TD> <TD> Time </TD> <TD> angle(Body mean acceleration derivative, mean gravity) </TD> </TR>
   <TR> <TD align="right"> 82 </TD> <TD> angle.tBodyGyroMean.gravityMean </TD> <TD> Time </TD> <TD> angle(Body mean gyroscope, mean gravity) </TD> </TR>
   <TR> <TD align="right"> 83 </TD> <TD> angle.tBodyGyroJerkMean.gravityMean </TD> <TD> Time </TD> <TD> angle(Body mean gyroscope derivative, mean gravity) </TD> </TR>
-  <TR> <TD align="right"> 84 </TD> <TD> angle.X.gravityMean </TD> <TD> Time </TD> <TD> angle(X-axis, gravityMean) </TD> </TR>
-  <TR> <TD align="right"> 85 </TD> <TD> angle.Y.gravityMean </TD> <TD> Time </TD> <TD> angle(Y-axis, gravityMean) </TD> </TR>
-  <TR> <TD align="right"> 86 </TD> <TD> angle.Z.gravityMean </TD> <TD> Time </TD> <TD> angle(Z-axis, gravityMean) </TD> </TR>
+  <TR> <TD align="right"> 84 </TD> <TD> angle.X.gravityMean </TD> <TD> Time </TD> <TD> angle(X-axis, mean gravity) </TD> </TR>
+  <TR> <TD align="right"> 85 </TD> <TD> angle.Y.gravityMean </TD> <TD> Time </TD> <TD> angle(Y-axis, mean gravity) </TD> </TR>
+  <TR> <TD align="right"> 86 </TD> <TD> angle.Z.gravityMean </TD> <TD> Time </TD> <TD> angle(Z-axis, mean gravity) </TD> </TR>
    </TABLE>
 
 
