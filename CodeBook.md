@@ -102,3 +102,5 @@ The citation for this data set is:
 ## Data Transformations  
   
 The top-level flow of the R script (i.e. run_analysis.R) that I wrote to create a tidy data set that contains the mean and standard deviation of the UCA HAR Smartphone data set is composed of the following nine steps:  
+1. [Verify that the required R packages are installed](http://stackoverflow.com/questions/9341635/how-can-i-check-for-installed-r-packages-before-running-install-packages)  
+2. [Reset the R environment](http://stackoverflow.com/questions/14187048/r-language-clean-variables-and-close-connections)
