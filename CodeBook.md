@@ -1,15 +1,14 @@
 # Codebook #
 
-The objective of this document is to describe the process that I followed in order to create a tidy data set from the ["Human Activity Recognition Using Smartphones Data Set"](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
+The objective of this document is to describe the process that I followed in order to create a tidy data set from the ["University of California, Irvine (UCI) Human Activity Recognition (HAR) Using Smartphones Data Set"](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 
-## Variables [1]
-This data set includes a file (i.e. "features_info.txt") that contains a 
-description of the variables enumerated in Table #1. For example, the authors of the following journal article:
+## Variables
+This data set includes a file (i.e. "features_info.txt") that describes the variables contained in the UCI HAR using Smartphones data set including the mean and standard deviation variables enumerated in Table #1.  For example, the authors of the following journal article:
 
 [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012.
 
-mention that "the features selected for this database come from the accelerometer and gyroscope 3-axis raw signals tAcc-XYZ and tGryo-XYZ" [1].
-
+mention that "the features selected for this database come from the accelerometer and gyroscope 3-axis raw signals tAcc-XYZ and tGyroscope-XYZ" [1]. In addition, this text document (i.e. "features_info.txt") contains a detailed description of the processing applied to the raw data in order to generate time and frequency domain features. For example, the authors of the above journal article applied both a median and a "3rd order Butterworth low-pass filter with a corner frequency of 20 Hz to remove noise" [1]. In addition, this description of the raw data pre-processing mentions that these authors "separated [the] body and gravity acceleration signals" using the same type of low-pass filter with a lower corner frequency (i.e. "0.3 Hz") [1].   
+  
 <!-- html table generated in R 3.1.0 by xtable 1.7-3 package -->
 <!-- Sat May 17 23:39:06 2014 -->
 <TABLE border=1>  
