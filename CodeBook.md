@@ -130,7 +130,7 @@ Next, `run_analysis.R` loops loops through the feature names and applies the reg
 <!-- html table generated in R 3.1.0 by xtable 1.7-3 package -->
 <!-- Sun May 18 14:17:29 2014 -->
 <TABLE border=1>
-<caption align=center> <u>Table #2</u>: Reformat UCI HAR Smartphone data set variable names</caption>
+<caption> <u>Table #2</u>: Reformat UCI HAR Smartphone data set variable names</caption>
 <TR> <TH> Scenario # </TH> <TH> Feature Name </TH> <TH> Regular Expression </TH> <TH> Transformed Feature Name </TH>  </TR>
   <TR> <TD align="center"> 1 </TD> <TD> tBodyAcc-mean()-X </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]) </TD> <TD> tBodyAccXMean </TD> </TR>
   <TR> <TD align="center"> 2 </TD> <TD> tBodyAcc-arCoeff()-X,2 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]),([0-9]) </TD> <TD> tBodyAccArCoeffX2 </TD> </TR>
