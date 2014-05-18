@@ -127,16 +127,4 @@ Next, `run_analysis.R` loops loops through the feature names and applies the reg
 - [Regular expression for matching parentheses](http://stackoverflow.com/questions/5633533/regular-expression-for-matching-parentheses)    
 - [Regex group capture in R](http://stackoverflow.com/questions/952275/regex-group-capture-in-r)  
   
-<TABLE border=1>
-	<TR>
-		<TH> Feature Name </TH> 
-		<TH> Regular Expression </TH> 
-		<TH> Transformed Feature Name </TH> 
-	</TR>
-	<TR>
-		<TD> tBodyAcc-mean()-X </TD> 
-		<TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]) </TD> 
-		<TD> tBodyAccXMean </TD> </TR>
-	</TR>
-</TABLE>  
   
