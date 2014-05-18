@@ -33,6 +33,9 @@ tidyData <- read.table("./tidyData.txt",
 # Techincal references:
 # -------------------
 # http://stackoverflow.com/questions/14733732/cant-change-fonts-in-ggplot-geom-text
+#
+# Chang, Winston. R Graphics Cookbook: Practical Recipes 
+#   for Visualizing Data. O'Reilly Media. 2013. Sebastopol, CA.
 windowsFonts(Times=windowsFont("TT Times New Roman"))
 
 ggplot(tidyData, aes(x=subject,y=tBodyAccMagMean,colour=activity)) + 
