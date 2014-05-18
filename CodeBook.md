@@ -99,7 +99,7 @@ The citation for this data set is:
   <TR> <TD align="right"> 86 </TD> <TD> angle.Z.gravityMean </TD> <TD> Time </TD> <TD> angle(Z-axis, mean gravity) </TD> </TR>
    </TABLE>
 
-## Data Transformations
+## Data Transformations<br />
 The top-level flow of the R script (i.e. run_analysis.R) that I wrote to create a tidy data set that contains the mean and standard deviation of the UCA HAR Smartphone data set is composed of the following nine steps:<br /> 
 1. [Verify that the required R packages are installed](http://stackoverflow.com/questions/9341635/how-can-i-check-for-installed-r-packages-before-running-install-packages)<br />
 2. [Reset the R environment](http://stackoverflow.com/questions/14187048/r-language-clean-variables-and-close-connections)<br />
