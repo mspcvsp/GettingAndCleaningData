@@ -99,18 +99,18 @@ The citation for this data set is:
   <TR> <TD align="right"> 86 </TD> <TD> angle.Z.gravityMean </TD> <TD> Time </TD> <TD> angle(Z-axis, mean gravity) </TD> </TR>
    </TABLE>
 
-## Data Transformations
-
-The top-level flow of the R script (i.e. run_analysis.R) that I wrote to create a tidy data set that contains the mean and standard deviation of the UCA HAR Smartphone data set is composed of the following nine steps:
-1. [Verify that the required R packages are installed](http://stackoverflow.com/questions/9341635/how-can-i-check-for-installed-r-packages-before-running-install-packages)
-2. [Reset the R environment](http://stackoverflow.com/questions/14187048/r-language-clean-variables-and-close-connections)
-3. Initialize the Uniform Resource Locator (i.e. URL) that refers to the compressed UCI HAR dataset.
-4.  Determine whether or not the *getdata-projectfiles-UCI HAR Dataset* folder exists in the directory where run_analysis.R is being run. If this folder doesn't exist, run_analysis.R downloads this zip using [binary mode](http://stackoverflow.com/questions/9655361/download-png-jpg-with-r). Next, it extracts the contents of this zip file using the [unzip](http://www.r-bloggers.com/read-compressed-zip-files-in-r/) function.
-5. Initialize the path to the top-level of the UCI HAR Dataset<br /> 
-6. Loads the combined training & test data set
-7. Computes the average value of each variable for each activity and subject using the aggregate function that is part of the [plyr package](http://stackoverflow.com/questions/11370323/learning-to-understand-plyr-ddply).
-8. Orders the data frame generated of step 7.) by the subject using the arrange function that is included in the plyr package. This function was mentioned in the following presentation by Hadley Wickham: ["Tidy data & tidy tools"](http://vimeo.com/33727555). In addition, a link to the slides for this presentation is provided in the a Promethus Research blog article entitled ["Good Data Management Practices for Data Analysis: Tidy Data (Part 2)](http://www.prometheusresearch.com/good-data-management-practices-for-data-analysis-tidy-data-part-2/).
-9. Write the tidy data set to a text file using *write.table()* function with the *row.names* option set to FALSE.
+## Data Transformations  
+  
+The top-level flow of the R script (i.e. run_analysis.R) that I wrote to create a tidy data set that contains the mean and standard deviation of the UCA HAR Smartphone data set is composed of the following nine steps:  
+1. [Verify that the required R packages are installed](http://stackoverflow.com/questions/9341635/how-can-i-check-for-installed-r-packages-before-running-install-packages)  
+2. [Reset the R environment](http://stackoverflow.com/questions/14187048/r-language-clean-variables-and-close-connections)  
+3. Initialize the Uniform Resource Locator (i.e. URL) that refers to the compressed UCI HAR dataset.  
+4.  Determine whether or not the *getdata-projectfiles-UCI HAR Dataset* folder exists in the directory where run_analysis.R is being run. If this folder doesn't exist, run_analysis.R downloads this zip using [binary mode](http://stackoverflow.com/questions/9655361/download-png-jpg-with-r). Next, it extracts the contents of this zip file using the [unzip](http://www.r-bloggers.com/read-compressed-zip-files-in-r/) function.  
+5. Initialize the path to the top-level of the UCI HAR Dataset   
+6. Loads the combined training & test data set  
+7. Computes the average value of each variable for each activity and subject using the aggregate function that is part of the [plyr package](http://stackoverflow.com/questions/11370323/learning-to-understand-plyr-ddply).  
+8. Orders the data frame generated of step 7.) by the subject using the arrange function that is included in the plyr package. This function was mentioned in the following presentation by Hadley Wickham: ["Tidy data & tidy tools"](http://vimeo.com/33727555). In addition, a link to the slides for this presentation is provided in the a Promethus Research blog article entitled ["Good Data Management Practices for Data Analysis: Tidy Data (Part 2)](http://www.prometheusresearch.com/good-data-management-practices-for-data-analysis-tidy-data-part-2/).  
+9. Write the tidy data set to a text file using *write.table()* function with the *row.names* option set to FALSE.  
 
 The procedure that I followed to create a combined training & test data set begins with loading a description of the features stored in the features.txt file located in the UCI HAR Dataset folder. 
 
