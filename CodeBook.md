@@ -12,8 +12,8 @@ The citation for this data set is:
 
 <!-- html table generated in R 3.1.0 by xtable 1.7-3 package -->
 <!-- Sat May 17 23:39:06 2014 -->
-<TABLE border=1>
-<caption> <u>Table #1</u>: Human Activity Recognition <br /> Using Smartphones Data Set Variable Names </caption>
+<TABLE border=1>  
+<caption> <u>Table #1</u>: Human Activity Recognition <br /> Using Smartphones Data Set Variable Names </caption>  
 <TR> <TH> # </TH> <TH> Variable </TH> <TH> Domain </TH> <TH> Description </TH>  </TR>
   <TR> <TD align="right"> 1 </TD> <TD> tBodyAccXMean </TD> <TD> Time </TD> <TD> Body x-axis mean acceleration </TD> </TR>
   <TR> <TD align="right"> 2 </TD> <TD> tBodyAccYMean </TD> <TD> Time </TD> <TD> Body y-axis mean acceleration </TD> </TR>
@@ -129,7 +129,7 @@ Next, `run_analysis.R` loops loops through the feature names and applies the reg
   
 <!-- html table generated in R 3.1.0 by xtable 1.7-3 package -->
 <!-- Sun May 18 14:17:29 2014 -->
-<TABLE border=1>
+<TABLE border=1>  
 <caption> <u>Table #2</u>: Reformat UCI HAR Smartphone data set variable names</caption>
 <TR> <TH> Scenario # </TH> <TH> Feature Name </TH> <TH> Regular Expression </TH> <TH> Transformed Feature Name </TH>  </TR>
   <TR> <TD align="center"> 1 </TD> <TD> tBodyAcc-mean()-X </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]) </TD> <TD> tBodyAccXMean </TD> </TR>
