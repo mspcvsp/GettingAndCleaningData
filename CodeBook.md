@@ -6,10 +6,14 @@ The citation for this data set is:
 [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012. ["Human Activity Recognition Using Smartphones Data Set"](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 
 ## Variables [1]
+[Github Markdown Syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#lines)  
+[HTML table caption](http://www.w3schools.com/tags/tag_caption.asp)  
+[Line Break](http://stackoverflow.com/questions/13730982/force-line-break-br-in-header-h1-in-markdown)
 
 <!-- html table generated in R 3.1.0 by xtable 1.7-3 package -->
 <!-- Sat May 17 23:39:06 2014 -->
 <TABLE border=1>
+<caption> <u>Table #1</u>: Human Activity Recognition <br /> Using Smartphones Data Set Variable Names </caption>
 <TR> <TH> # </TH> <TH> Variable </TH> <TH> Domain </TH> <TH> Description </TH>  </TR>
   <TR> <TD align="right"> 1 </TD> <TD> tBodyAccXMean </TD> <TD> Time </TD> <TD> Body x-axis mean acceleration </TD> </TR>
   <TR> <TD align="right"> 2 </TD> <TD> tBodyAccYMean </TD> <TD> Time </TD> <TD> Body y-axis mean acceleration </TD> </TR>
@@ -112,3 +116,26 @@ The top-level flow of the R script (i.e. run_analysis.R) that I wrote to create 
 8. Order the data frame generated of step 7.) by the subject using the arrange function that is included in the plyr package. This function was mentioned in the following presentation by Hadley Wickham: ["Tidy data & tidy tools"](http://vimeo.com/33727555). In addition, a link to the slides for this presentation is provided in the a Promethus Research blog article entitled ["Good Data Management Practices for Data Analysis: Tidy Data (Part 2)](http://www.prometheusresearch.com/good-data-management-practices-for-data-analysis-tidy-data-part-2/).  
 9. Write the tidy data set to a text file using *write.table()* function with the *row.names* option set to FALSE.  
   
+The procedure that I followed to create a combined training & test data set begins with loading a description of the variables (i.e. features) stored in the *features.txt* file located in the "UCI HAR Dataset" folder.  
+
+The first processing step that I apply is removing the feature number from the feature name using the following gsub function call:  
+  
+`features <- gsub("[0-9]+\\s+","",features)`.  
+  
+Next, *runAnalysis.R* loops through the feature names and applies the regular expressions defined in Table #2 to separate substring groups from the "HCI HAR Smartphone" data set variable names. This R script subsequently reformats the feature name shown on the left column of Table #2 into the transformed feature name illustrated on the right column in this table. In addition, the regular expressions included in the center column of Table #2 are based on the following examples:  
+     
+- [Regular expression for matching parentheses](http://stackoverflow.com/questions/5633533/regular-expression-for-matching-parentheses)  
+- [Regex group capture in R](http://stackoverflow.com/questions/952275/regex-group-capture-in-r)  
+  
+<TABLE border=1>
+  <caption><u>Table #2</u>: Reformat Feature Names</caption>
+  <TR> <TH> Feature Name </TH> <TH> Regular Expression </TH> <TH> Transformed Feature Name </TH> </TR>
+  <TR> <TD> tBodyAcc-mean()-X </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]) </TD> <TD> tBodyAccXMean </TD> </TR>
+  <TR> <TD> tBodyAcc-arCoeff()-X,2 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]),([0-9]) </TD> <TD> tBodyAccArCoeffX2 </TD> </TR>
+  <TR> <TD> tBodyAcc-correlation()-X,Y </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]),([A-Z]) </TD> <TD> tBodyAccXYCorrelation </TD> </TR>
+  <TR> <TD> tBodyGyroJerkMag-arCoeff()2 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]([0-9]) </TD> <TD> tBodyGyroJerkMagArCoeff2 </TD> </TR>
+  <TR> <TD> fBodyAcc-bandsEnergy()-25,48 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([0-9]+),([0-9]+) </TD> <TD> fBodyAccBandsEnergy.25.48 </TD> </TR>
+  <TR> <TD> angle(tBodyGyroMean,gravityMean) </TD> <TD> ([a-z]+)[(]([A-Za-z]+)[)]*,([A-Za-z]+)[)] </TD> <TD> angle.tBodyGyroMean.gravityMean </TD> </TR>
+  <TR> <TD> fBodyBodyGyroJerkMag-skewness() </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(]*[)]* </TD> <TD> fBodyBodyGyroJerkMagSkewness </TD> </TR>
+  <TR> <TD> fBodyAccJerk-maxInds-Y </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)-([A-Z]) </TD> <TD> fBodyAccJerkYMaxInds </TD> </TR>
+</TABLE>
