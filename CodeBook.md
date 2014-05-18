@@ -128,7 +128,6 @@ Next, `run_analysis.R` loops loops through the feature names and applies the reg
 - [Regex group capture in R](http://stackoverflow.com/questions/952275/regex-group-capture-in-r)  
   
 <TABLE border=1>
-  <caption><u>Table #2</u>: Reformat Feature Names</caption>
   <TR> <TH> Feature Name </TH> <TH> Regular Expression </TH> <TH> Transformed Feature Name </TH> </TR>
   <TR> <TD> tBodyAcc-mean()-X </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]) </TD> <TD> tBodyAccXMean </TD> </TR>
   <TR> <TD> tBodyAcc-arCoeff()-X,2 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]),([0-9]) </TD> <TD> tBodyAccArCoeffX2 </TD> </TR>
