@@ -1,6 +1,6 @@
 # Codebook #
 
-The objective of this document is to describe the process that I followed in order to create a tidy data set from the University of California, Irvine Human Activity Recognition Using Smartphones data set mean and standard deviation measurements.
+The objective of this document is to describe the process that I followed in order to create a tidy data set from the University of California (UCI), Irvine Human Activity Recognition (HAR) Using Smartphones data set mean and standard deviation measurements.
 
 The citation for this data set is:  
 [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012. ["Human Activity Recognition Using Smartphones Data Set"](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
@@ -99,4 +99,28 @@ The citation for this data set is:
   <TR> <TD align="right"> 86 </TD> <TD> angle.Z.gravityMean </TD> <TD> Time </TD> <TD> angle(Z-axis, mean gravity) </TD> </TR>
    </TABLE>
 
+## Data Transformations
+The top-level flow of the R script (i.e. run_analysis.R) that I wrote to create a tidy data set that contains the mean and standard deviation of the UCA HAR Smartphone data set is composed of the following nine steps:  
+1. [Verify that the required R packages are installed](http://stackoverflow.com/questions/9341635/how-can-i-check-for-installed-r-packages-before-running-install-packages)  
+2. [Reset the R environment](http://stackoverflow.com/questions/14187048/r-language-clean-variables-and-close-connections)  
+3.  Initialize the Uniform Resource Locator (i.e. URL) that refers to the compressed UCI HAR dataset.
+4.  Determine whether or not the *getdata-projectfiles-UCI HAR Dataset* folder exists in the directory where run_analysis.R is being run. If this folder doesn't exist, run_analysis.R downloads this zip using [binary mode](http://stackoverflow.com/questions/9655361/download-png-jpg-with-r). Next, it extracts the contents of this zip file using the [unzip](http://www.r-bloggers.com/read-compressed-zip-files-in-r/) function.  
+5. Initialize the path to the top-level of the UCI HAR Dataset  
+6. Loads the combined training & test data set  
+7. Computes the average value of each variable for each activity and subject using the aggregate function that is part of the [plyr package](http://stackoverflow.com/questions/11370323/learning-to-understand-plyr-ddply).  
+8. Orders the data frame generated of step 7.) by the subject using the arrange function that is included in the plyr package. This function was mentioned in the following presentation by Hadley Wickham: ["Tidy data & tidy tools"](http://vimeo.com/33727555). In addition, a link to the slides for this presentation is provided in the a Promethus Research blog article entitled ["Good Data Management Practices for Data Analysis: Tidy Data (Part 2)](http://www.prometheusresearch.com/good-data-management-practices-for-data-analysis-tidy-data-part-2/).  
+9. Write the tidy data set to a text file using *write.table()* function with the *row.names* option set to FALSE.
 
+The procedure that I followed to create a combined training & test data set begins with loading a description of the features stored in the features.txt file located in the UCI HAR Dataset folder. 
+
+<TABLE border=1>
+  <TR> <TH> Feature Name </TH> <TH> Regular Expression </TH> <TH> Transformed Feature Name </TH> </TR>
+  <TR> <TD> tBodyAcc-mean()-X </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]) </TD> <TD> tBodyAccXMean </TD> </TR>
+  <TR> <TD> tBodyAcc-arCoeff()-X,2 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]),([0-9]) </TD> <TD> tBodyAccArCoeffX2 </TD> </TR>
+  <TR> <TD> tBodyAcc-correlation()-X,Y </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]),([A-Z]) </TD> <TD> tBodyAccXYCorrelation </TD> </TR>
+  <TR> <TD> tBodyGyroJerkMag-arCoeff()2 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]([0-9]) </TD> <TD> tBodyGyroJerkMagArCoeff2 </TD> </TR>
+  <TR> <TD> fBodyAcc-bandsEnergy()-25,48 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([0-9]+),([0-9]+) </TD> <TD> fBodyAccBandsEnergy.25.48 </TD> </TR>
+  <TR> <TD> angle(tBodyGyroMean,gravityMean) </TD> <TD> ([a-z]+)[(]([A-Za-z]+)[)]*,([A-Za-z]+)[)] </TD> <TD> angle.tBodyGyroMean.gravityMean </TD> </TR>
+  <TR> <TD> fBodyBodyGyroJerkMag-skewness() </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(]*[)]* </TD> <TD> fBodyBodyGyroJerkMagSkewness </TD> </TR>
+  <TR> <TD> fBodyAccJerk-maxInds-Y </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)-([A-Z]) </TD> <TD> fBodyAccJerkYMaxInds </TD> </TR>
+</TABLE>
