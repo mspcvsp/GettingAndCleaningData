@@ -109,4 +109,4 @@ The top-level flow of the R script (i.e. run_analysis.R) that I wrote to create 
 1. [Verify that the required R packages are installed](http://stackoverflow.com/questions/9341635/how-can-i-check-for-installed-r-packages-before-running-install-packages)  
 2. [Reset the R environment](http://stackoverflow.com/questions/14187048/r-language-clean-variables-and-close-connections)    
 3. Initialize the Uniform Resource Locator (i.e. URL) that refers to the compressed UCI HAR dataset.  
-4. Determine whether or not the getdata-projectfiles-UCI HAR dataset folder exists in the directory where `run_analysis.R` is being run.  
+4. Determine whether or not the getdata-projectfiles-UCI HAR dataset folder exists in the directory where `run_analysis.R` is being run.If this folder doesn't exist, `run_analysis.R` downloads this zip using [binary mode](http://stackoverflow.com/questions/9655361/download-png-jpg-with-r). Next, it extracts the contents of this zip file using the [unzip](http://www.r-bloggers.com/read-compressed-zip-files-in-r/) function.  
