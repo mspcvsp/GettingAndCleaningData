@@ -131,14 +131,14 @@ Next, `run_analysis.R` loops loops through the feature names and applies the reg
 <!-- Sun May 18 14:17:29 2014 -->
 <TABLE border=1>
 <TR> <TH> Scenario # </TH> <TH> Feature Name </TH> <TH> Regular Expression </TH> <TH> Transformed Feature Name </TH>  </TR>
-  <TR> <TD align="right"> 1 </TD> <TD> tBodyAcc-mean()-X </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]) </TD> <TD> tBodyAccXMean </TD> </TR>
-  <TR> <TD align="right"> 2 </TD> <TD> tBodyAcc-arCoeff()-X,2 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]),([0-9]) </TD> <TD> tBodyAccArCoeffX2 </TD> </TR>
-  <TR> <TD align="right"> 3 </TD> <TD> tBodyAcc-correlation()-X,Y </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]),([A-Z]) </TD> <TD> tBodyAccXYCorrelation </TD> </TR>
-  <TR> <TD align="right"> 4 </TD> <TD> tBodyGyroJerkMag-arCoeff()2 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]([0-9]) </TD> <TD> tBodyGyroJerkMagArCoeff2 </TD> </TR>
-  <TR> <TD align="right"> 5 </TD> <TD> fBodyAcc-bandsEnergy()-25,48 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([0-9]+),([0-9]+) </TD> <TD> fBodyAccBandsEnergy.25.48 </TD> </TR>
-  <TR> <TD align="right"> 6 </TD> <TD> angle(tBodyGyroMean,gravityMean) </TD> <TD> ([a-z]+)[(]([A-Za-z]+)[)]*,([A-Za-z]+)[)] </TD> <TD> angle.tBodyGyroMean.gravityMean </TD> </TR>
-  <TR> <TD align="right"> 7 </TD> <TD> fBodyBodyGyroJerkMag-skewness() </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(]*[)]* </TD> <TD> fBodyBodyGyroJerkMagSkewness </TD> </TR>
-  <TR> <TD align="right"> 8 </TD> <TD> fBodyAccJerk-maxInds-Y </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)-([A-Z]) </TD> <TD> fBodyAccJerkYMaxInds </TD> </TR>
+  <TR> <TD align="center"> 1 </TD> <TD> tBodyAcc-mean()-X </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]) </TD> <TD> tBodyAccXMean </TD> </TR>
+  <TR> <TD align="center"> 2 </TD> <TD> tBodyAcc-arCoeff()-X,2 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]),([0-9]) </TD> <TD> tBodyAccArCoeffX2 </TD> </TR>
+  <TR> <TD align="center"> 3 </TD> <TD> tBodyAcc-correlation()-X,Y </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([A-Z]),([A-Z]) </TD> <TD> tBodyAccXYCorrelation </TD> </TR>
+  <TR> <TD align="center"> 4 </TD> <TD> tBodyGyroJerkMag-arCoeff()2 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]([0-9]) </TD> <TD> tBodyGyroJerkMagArCoeff2 </TD> </TR>
+  <TR> <TD align="center"> 5 </TD> <TD> fBodyAcc-bandsEnergy()-25,48 </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(][)]-([0-9]+),([0-9]+) </TD> <TD> fBodyAccBandsEnergy.25.48 </TD> </TR>
+  <TR> <TD align="center"> 6 </TD> <TD> angle(tBodyGyroMean,gravityMean) </TD> <TD> ([a-z]+)[(]([A-Za-z]+)[)]*,([A-Za-z]+)[)] </TD> <TD> angle.tBodyGyroMean.gravityMean </TD> </TR>
+  <TR> <TD align="center"> 7 </TD> <TD> fBodyBodyGyroJerkMag-skewness() </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)[(]*[)]* </TD> <TD> fBodyBodyGyroJerkMagSkewness </TD> </TR>
+  <TR> <TD align="center"> 8 </TD> <TD> fBodyAccJerk-maxInds-Y </TD> <TD> ([A-Za-z]+)-([A-Za-z]+)-([A-Z]) </TD> <TD> fBodyAccJerkYMaxInds </TD> </TR>
    </TABLE>
 
 
