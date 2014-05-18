@@ -117,5 +117,8 @@ The top-level flow of the R script (i.e. run_analysis.R) that I wrote to create 
 9. Write the tidy data set to a text file using *write.table()* function with the *row.names* option set to FALSE.  
 
 The procedure that I followed to create a combined training & test data set begins with loading a description of the variables (i.e. features) stored in the *features.txt* file located in the "UCI HAR Dataset" folder.  
-
-
+  
+The first processing step that I apply is removing the feature number from the feature name using the following gsub function call:  
+  
+`features <- gsub("[0-9]+\\s+","",features)`.  
+  
