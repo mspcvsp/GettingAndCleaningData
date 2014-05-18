@@ -283,7 +283,6 @@ loadActivityData <- function(topLevelDataPath,
   # Reads the activity number for each record and converts it to an
   # activity label
   #
-  #
   # Args:
   #   topLevelDataPath: String that defines the path to the UCI Human
   #                     Activity Recognition (HAR) Smartphones Data Set
@@ -462,6 +461,10 @@ tidyData <- aggregate(. ~ subject + activity,
                       FUN=mean)
 
 tidyData <- arrange(tidyData, subject)
+
+write.table(tidyData,
+            "./tidyData.txt",
+            row.names=FALSE)
 
 # Techincal references:
 # -------------------
