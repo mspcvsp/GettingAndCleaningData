@@ -12,7 +12,7 @@ mention that "the features selected for this database come from the acceleromete
 <!-- html table generated in R 3.1.0 by xtable 1.7-3 package -->
 <!-- Sat May 17 23:39:06 2014 -->
 <TABLE border=1>  
-<caption> <u>Table #1</u>: Human Activity Recognition Using Smartphones Data Set Mean & Standard Deviation Variable Names </caption>  
+<caption> <u>Table #1</u>: Human Activity Recognition Using Smartphones Data Set Mean & Standard Deviation Variable Names [1] </caption>  
 <TR> <TH> # </TH> <TH> Variable </TH> <TH> Domain </TH> <TH> Description </TH>  </TR>
   <TR> <TD align="right"> 1 </TD> <TD> tBodyAccXMean </TD> <TD> Time </TD> <TD> Body x-axis mean acceleration </TD> </TR>
   <TR> <TD align="right"> 2 </TD> <TD> tBodyAccYMean </TD> <TD> Time </TD> <TD> Body y-axis mean acceleration </TD> </TR>
