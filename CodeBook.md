@@ -30,7 +30,7 @@ mention that "the features selected for this database come from the acceleromete
   <TR> <TD align="right"> 14 </TD> <TD> tbodyaccjerkymean </TD> <TD> Time </TD> <TD> Body mean y-axis acceleration derivative </TD> </TR>
   <TR> <TD align="right"> 15 </TD> <TD> tbodyaccjerkzmean </TD> <TD> Time </TD> <TD> Body mean z-axis acceleration derivative </TD> </TR>
   <TR> <TD align="right"> 16 </TD> <TD> tbodyaccjerkxstd </TD> <TD> Time </TD> <TD> Body x-axis acceleration derivative standard deviation </TD> </TR>
-  <TR> <TD align="right"> 17 </TD> <TD> tbodyaccjerkyStd </TD> <TD> Time </TD> <TD> Body y-axis acceleration derivative standard deviation </TD> </TR>
+  <TR> <TD align="right"> 17 </TD> <TD> tbodyaccjerkystd </TD> <TD> Time </TD> <TD> Body y-axis acceleration derivative standard deviation </TD> </TR>
   <TR> <TD align="right"> 18 </TD> <TD> tbodyaccjerkzstd </TD> <TD> Time </TD> <TD> Body z-axis acceleration derivative standard deviation </TD> </TR>
   <TR> <TD align="right"> 19 </TD> <TD> tbodygyroxmean </TD> <TD> Time </TD> <TD> Body mean x-axis gyroscope </TD> </TR>
   <TR> <TD align="right"> 20 </TD> <TD> tbodygyroymean </TD> <TD> Time </TD> <TD> Body mean y-axis gyroscope </TD> </TR>
