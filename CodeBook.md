@@ -14,9 +14,9 @@ mention that "the features selected for this database come from the acceleromete
 <TABLE border=1>  
 <caption> <u>Table #1</u>: Human Activity Recognition Using Smartphones Data Set Mean & Standard Deviation Variable Names [1] </caption>  
 <TR> <TH> # </TH> <TH> Variable </TH> <TH> Domain </TH> <TH> Description </TH>  </TR>
-  <TR> <TD align="right"> 1 </TD> <TD> tbodyaccxMean </TD> <TD> Time </TD> <TD> Body x-axis mean acceleration </TD> </TR>
-  <TR> <TD align="right"> 2 </TD> <TD> tbodyaccyMean </TD> <TD> Time </TD> <TD> Body y-axis mean acceleration </TD> </TR>
-  <TR> <TD align="right"> 3 </TD> <TD> tbodyacczMean </TD> <TD> Time </TD> <TD> Body z-axis mean acceleration </TD> </TR>
+  <TR> <TD align="right"> 1 </TD> <TD> tbodyaccxmean </TD> <TD> Time </TD> <TD> Body x-axis mean acceleration </TD> </TR>
+  <TR> <TD align="right"> 2 </TD> <TD> tbodyaccymean </TD> <TD> Time </TD> <TD> Body y-axis mean acceleration </TD> </TR>
+  <TR> <TD align="right"> 3 </TD> <TD> tbodyacczmean </TD> <TD> Time </TD> <TD> Body z-axis mean acceleration </TD> </TR>
   <TR> <TD align="right"> 4 </TD> <TD> tbodyaccxstd </TD> <TD> Time </TD> <TD> Body x-axis acceleration standard deviation </TD> </TR>
   <TR> <TD align="right"> 5 </TD> <TD> tbodyaccystd </TD> <TD> Time </TD> <TD> Body y-axis acceleration standard deviation </TD> </TR>
   <TR> <TD align="right"> 6 </TD> <TD> tbodyacczstd </TD> <TD> Time </TD> <TD> Body z-axis acceleration standard deviation </TD> </TR>
