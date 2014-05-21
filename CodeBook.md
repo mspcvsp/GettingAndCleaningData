@@ -113,7 +113,8 @@ The top-level flow of the R script (i.e. `run_analysis.R`) that I wrote to creat
 6. Load the combined training & test data set.  
 7. Computes the average value of each variable for each activity and subject using the aggregate function that is part of the [plyr package](http://stackoverflow.com/questions/11370323/learning-to-understand-plyr-ddply).  
 8. Order the resulting data frame by the subject using the arrange function that is included in the plyr package. This function was mentioned in the following presentation by Hadley Wickham: ["Tidy data & tidy tools"](http://vimeo.com/33727555). In addition, a link to the slides for this presentation is provided in a Promethus Research blog article entitled ["Good Data Management Practices for Data Analysis: Tidy Data (Part 2)](http://www.prometheusresearch.com/good-data-management-practices-for-data-analysis-tidy-data-part-2/).  
-9. Write the tidy data set to a text file using *write.table()* function with the *row.names* option set to FALSE.  
+9. Set all the characters of the column names to lower case using the `tolower` function.  
+10. Write the tidy data set to a text file using *write.table()* function with the *row.names* option set to FALSE.  
 
 The procedure that I followed to create a combined training & test data set begins with loading a description of the variables (i.e. features) stored in the *features.txt* file located in the "UCI HAR Dataset" folder.  
   

@@ -461,6 +461,8 @@ tidyData <- aggregate(. ~ subject + activity,
 
 tidyData <- arrange(tidyData, subject)
 
+colnames(tidyData) <- tolower(colnames(tidyData))
+
 write.table(tidyData,
             "./tidyData.txt",
             row.names=FALSE)

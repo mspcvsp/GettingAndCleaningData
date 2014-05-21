@@ -38,7 +38,7 @@ tidyData <- read.table("./tidyData.txt",
 #   for Visualizing Data. O'Reilly Media. 2013. Sebastopol, CA.
 windowsFonts(Times=windowsFont("TT Times New Roman"))
 
-ggplot(tidyData, aes(x=subject,y=tBodyAccMagMean,colour=activity)) + 
+ggplot(tidyData, aes(x=subject,y=tbodyaccmagmean,colour=activity)) + 
   geom_point(size=5) + facet_grid(. ~ activity) + 
   facet_wrap(~ activity,nrow=3) + 
   scale_x_discrete(breaks=c(seq(1,30,5))) +
