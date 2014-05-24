@@ -72,9 +72,9 @@ reformatVariableNames <- function(inFeatures) {
   # - "tBodyAcc-arCoeff()-X,2" to "tBodyAccArCoeffX2"
   # - "tBodyAcc-correlation()-X,Y" to "tBodyAccXYCorrelation"
   # - "tBodyGyroJerkMag-arCoeff()2" to "tBodyGyroJerkMagArCoeff2"
-  # - "fBodyAcc-bandsEnergy()-25,48" to "fBodyAccBandsEnergy.25.48"
+  # - "fBodyAcc-bandsEnergy()-25,48" to "fBodyAccBandsEnergy2548"
   # - "angle(tBodyGyroMean,gravityMean)" to 
-  #   "angle.tBodyGyroMean.gravityMean"
+  #   "angletBodyGyroMeangravityMean"
   # - "fBodyBodyGyroJerkMag-skewness()" to 
   #   "fBodyBodyGyroJerkMagSkewness"
   # - "fBodyAccJerk-maxInds-Y" to "fBodyAccJerkYMaxInds"
@@ -152,7 +152,7 @@ reformatVariableNames <- function(inFeatures) {
       }
     }
     
-    # Transform "fBodyAcc-bandsEnergy()-25,48" to "fBodyAccBandsEnergy.25.48"
+    # Transform "fBodyAcc-bandsEnergy()-25,48" to "fBodyAccBandsEnergy2548"
     if (!matchFound) {
       strings <- str_match(outFeatures[n],
                            "([A-Za-z]+)-([A-Za-z]+)[(][)]-([0-9]+),([0-9]+)")
@@ -164,15 +164,13 @@ reformatVariableNames <- function(inFeatures) {
         
         outFeatures[n] <- paste(strings[1,2],
                                 functionName,
-                                ".",
                                 strings[1,4],
-                                ".",
                                 strings[1,5],sep="")
       }
     }
     
     # Transform "angle(tBodyGyroMean,gravityMean)" to 
-    # "angle.tBodyGyroMean.gravityMean"
+    # "angletBodyGyroMeangravityMean"
     if (!matchFound) {
       strings <- str_match(outFeatures[n],
                            "([a-z]+)[(]([A-Za-z]+)[)]*,([A-Za-z]+)[)]")
@@ -180,9 +178,9 @@ reformatVariableNames <- function(inFeatures) {
       if (!is.na(strings[1,1])) {
         matchFound = TRUE
         
-        outFeatures[n] <- paste(strings[1,2],
-                                strings[1,3],
-                                strings[1,4],sep=".")
+        outFeatures[n] <- paste0(strings[1,2],
+                                 strings[1,3],
+                                 strings[1,4])
       }
     }
     
