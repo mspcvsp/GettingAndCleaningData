@@ -93,13 +93,13 @@ mention that "the features selected for this database come from the acceleromete
   <TR> <TD align="right"> 77 </TD> <TD> fbodybodygyrojerkmagmean </TD> <TD> Frequency </TD> <TD> Mean FFT(Body gyroscope derivative) magnitude </TD> </TR>
   <TR> <TD align="right"> 78 </TD> <TD> fbodybodygyrojerkmagstd </TD> <TD> Frequency </TD> <TD> FFT(Body gyroscope derivative) magnitude standard deviation </TD> </TR>
   <TR> <TD align="right"> 79 </TD> <TD> fbodybodygyrojerkmagmeanfreq </TD> <TD> Frequency </TD> <TD> Body gyroscope derivative magnitude mean frequency </TD> </TR>
-  <TR> <TD align="right"> 80 </TD> <TD> angle.tbodyaccmean.gravity </TD> <TD> Time </TD> <TD> angle(Body mean acceleration, gravity) </TD> </TR>
-  <TR> <TD align="right"> 81 </TD> <TD> angle.tbodyaccjerkmean.gravitymean </TD> <TD> Time </TD> <TD> angle(Body mean acceleration derivative, mean gravity) </TD> </TR>
-  <TR> <TD align="right"> 82 </TD> <TD> angle.tbodygyromean.gravitymean </TD> <TD> Time </TD> <TD> angle(Body mean gyroscope, mean gravity) </TD> </TR>
-  <TR> <TD align="right"> 83 </TD> <TD> angle.tbodygyrojerkmean.gravitymean </TD> <TD> Time </TD> <TD> angle(Body mean gyroscope derivative, mean gravity) </TD> </TR>
-  <TR> <TD align="right"> 84 </TD> <TD> angle.x.gravitymean </TD> <TD> Time </TD> <TD> angle(X-axis, mean gravity) </TD> </TR>
-  <TR> <TD align="right"> 85 </TD> <TD> angle.y.gravitymean </TD> <TD> Time </TD> <TD> angle(Y-axis, mean gravity) </TD> </TR>
-  <TR> <TD align="right"> 86 </TD> <TD> angle.y.gravitymean </TD> <TD> Time </TD> <TD> angle(Z-axis, mean gravity) </TD> </TR>
+  <TR> <TD align="right"> 80 </TD> <TD> angletbodyaccmeangravity </TD> <TD> Time </TD> <TD> angle(Body mean acceleration, gravity) </TD> </TR>
+  <TR> <TD align="right"> 81 </TD> <TD> angletbodyaccjerkmeangravitymean </TD> <TD> Time </TD> <TD> angle(Body mean acceleration derivative, mean gravity) </TD> </TR>
+  <TR> <TD align="right"> 82 </TD> <TD> angletbodygyromeangravitymean </TD> <TD> Time </TD> <TD> angle(Body mean gyroscope, mean gravity) </TD> </TR>
+  <TR> <TD align="right"> 83 </TD> <TD> angletbodygyrojerkmeangravitymean </TD> <TD> Time </TD> <TD> angle(Body mean gyroscope derivative, mean gravity) </TD> </TR>
+  <TR> <TD align="right"> 84 </TD> <TD> anglexgravitymean </TD> <TD> Time </TD> <TD> angle(X-axis, mean gravity) </TD> </TR>
+  <TR> <TD align="right"> 85 </TD> <TD> angleygravitymean </TD> <TD> Time </TD> <TD> angle(Y-axis, mean gravity) </TD> </TR>
+  <TR> <TD align="right"> 86 </TD> <TD> angleygravitymean </TD> <TD> Time </TD> <TD> angle(Z-axis, mean gravity) </TD> </TR>
    </TABLE>
 
 ## Data Transformations    
