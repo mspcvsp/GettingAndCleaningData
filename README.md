@@ -1,7 +1,7 @@
 # Getting & Cleaning Data Project
 
 ## Introduction
-This repository illustrates the process of creating a tidy data set for the ["University of California, Irvine (UCI) Human Activity Recognition (HAR) Using Smartphones Data Set"](http://http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).  
+This repository illustrates the process of creating a tidy data set for the ["University of California, Irvine (UCI) Human Activity Recognition (HAR) Using Smartphones Data Set"](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).  
   
 ## R scripts discussion  
 Table #1 identifies the three R scripts that are included in the "Getting & Cleaning Data" repository. For example, `run_analysis.R` is a self-contained script that
